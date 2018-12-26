@@ -8,13 +8,12 @@ namespace Space_Invaders
 {
     class Player
     {
-        internal uint lives = 3;
-        private readonly string visual = "dTb";
-        internal uint points = 0;
+        private uint lives = 3;
+        private  string visual = "dTb";
+        private uint points = 0;
 
         public void Shoot() { }
         public void Die() { }
-        public void Kill() { }
 
 
 

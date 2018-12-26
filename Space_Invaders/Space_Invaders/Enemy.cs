@@ -8,6 +8,9 @@ namespace Space_Invaders
 {
     class Enemy
     {
+        private const string large  = @"|L|";
+        private const string medium = @"\M/";
+        private const string small  = @"/S\";
         public int tier;
         private bool alive = true;
         private string visual;
@@ -26,7 +29,32 @@ namespace Space_Invaders
             alive = false;
         }
 
+        private void SelectByTier(int tier)
+        {
+            switch (tier)
+            {
+                case 1:
+                    visual = "|Y|";
+                    killPoints = 10;
+                    break;
 
+                case 2:
+                    visual = medium;
+                    killPoints = 10;
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+
+                default:
+                    break;
+            }
+        }
 
     }
 }
