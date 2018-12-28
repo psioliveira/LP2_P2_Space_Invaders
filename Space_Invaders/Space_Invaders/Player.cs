@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Space_Invaders
 {
-    class Player
+    class Player: IEntity
     {
         private uint lives = 3;
-        private  string visual = "dTb";
+        private string visual = "dTb";
         private uint points = 0;
 
         public void Shoot() { }

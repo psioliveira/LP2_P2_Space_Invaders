@@ -8,6 +8,10 @@ namespace Space_Invaders
 {
     class Scenario
     {
+        private readonly int hiScore;
+        internal int score;
+        internal int Lives;
+
         public Enemy[,] enemies;
         public Player[] player;
     }
