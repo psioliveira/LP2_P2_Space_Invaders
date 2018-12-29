@@ -3,6 +3,8 @@ namespace Space_Invaders
 {
     class Enemy: IEntity
     {
+        //classe que implementa os enemies do jogo
+
         private const string ovini  = @"<O>";
         private const string large  = @"|L|";
         private const string medium = @"\M/";

@@ -8,6 +8,7 @@ namespace Space_Invaders
 {
     class Scenario
     {
+        //classe responsável pelo cenário do jogo
         private readonly int hiScore;
         internal int score;
         internal int Lives;

@@ -9,6 +9,7 @@ namespace Space_Invaders
 {
     class Program
     {
+        //classe principal do jogo
         static void Main(string[] args)
         {
             Console.WindowHeight = 88;

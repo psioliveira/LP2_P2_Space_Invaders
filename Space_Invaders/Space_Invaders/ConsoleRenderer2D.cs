@@ -26,6 +26,7 @@ namespace Space_Invaders
 
             // Se estivermos em Windows vamos meter o terminal com o tamanho do
             // mundo de simulação (não suportado em Linux e Mac)
+            // (é nescessário o projecto estar em .Net Framework 4.7.2)
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
                 Console.SetWindowSize(

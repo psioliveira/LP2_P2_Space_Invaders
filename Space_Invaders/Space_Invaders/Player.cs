@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace Space_Invaders
 {
     class Player: IEntity
-    {
+    { //clase que implementa o character para o jogador
+
         private uint lives = 3;
         private string visual = "dTb";
         private uint points = 0;
