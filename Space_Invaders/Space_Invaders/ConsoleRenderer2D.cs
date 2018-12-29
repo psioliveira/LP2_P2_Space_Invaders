@@ -6,7 +6,6 @@ namespace Space_Invaders
 {
     class ConsoleRenderer2D
     {
-        // Caracteres a imprimir para mostrar células vivas e mortas
         private readonly char alive, dead;
 
         // Construtor
