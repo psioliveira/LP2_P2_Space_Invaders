@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Space_Invaders</RootNamespace>
     <AssemblyName>Space_Invaders</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,7 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleRenderer2D.cs" />
+    <Compile Include="DoubleBuffer2D.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="IBuffer2D.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IRenderer2D.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

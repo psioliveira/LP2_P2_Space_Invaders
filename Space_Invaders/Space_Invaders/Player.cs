@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,3 +20,28 @@ namespace Space_Invaders
 
     }
 }
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Space_Invaders
+{
+    class Player: IEntity
+    {
+        private uint lives = 3;
+        private string visual = "dTb";
+        private uint points = 0;
+
+        public bool Alive { get ; set ; }
+
+        public void Shoot() { }
+        public void Die() { }
+
+
+
+    }
+}
+>>>>>>> Stashed changes
