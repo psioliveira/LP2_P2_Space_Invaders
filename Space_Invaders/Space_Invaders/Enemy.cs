@@ -47,6 +47,11 @@ namespace Space_Invaders
             Alive = false;
         }
 
+        public string GetShip()
+        {
+            return visual;
+        }
+
         private void SelectByTier(int tier)
         {
             switch (tier)
@@ -76,6 +81,8 @@ namespace Space_Invaders
                     break;
             }
         }
+
+       
 
     }
 }
