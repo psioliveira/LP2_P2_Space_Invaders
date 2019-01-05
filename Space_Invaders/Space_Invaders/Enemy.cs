@@ -21,16 +21,17 @@ namespace Space_Invaders
         private uint killPoints = 0;
         private readonly float speed;
 
-        private readonly DoubleBuffer2D<IEntity> simWorld;
+        //Referencia ao mundo
+        private readonly DoubleBuffer2D<IEntity> simSpace;
 
         // Construtor
         public Enemy(
             bool alive, int xMob, int yMob,
-            int tier, DoubleBuffer2D<IEntity> simWorld)
+            int tier, DoubleBuffer2D<IEntity> simSpace)
         {
             // Guardar dados passados no construtor
             Alive = alive;
-            this.simWorld = simWorld;
+            this.simSpace = simSpace;
             this.xMob = xMob;
             this.yMob = yMob;
             this.tier = tier;
