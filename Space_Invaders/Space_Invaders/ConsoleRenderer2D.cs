@@ -11,39 +11,49 @@ namespace Space_Invaders
         {
         }
 
-        // Faz o setup inicial antes da renderização começar
-        public void Setup(IBuffer2D<IEntity> worldToRender)
+        // Faz o setup inicial
+        public void Setup(Scenario worldToRender)
         {
             // Limpar a consola
             Console.Clear();
 
-            // Esconder o cursor pois causa distração
+            // Esconder o cursor
             Console.CursorVisible = false;
 
-            // Se estivermos em Windows vamos meter o terminal com o tamanho do
-            // mundo de simulação (não suportado em Linux e Mac)
-            // (é nescessário o projecto estar em .Net Framework 4.7.2)
+            // Se estivermos em Windows adicionar o terminal com o tamanho do mundo de simulação
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Console.SetWindowSize(
-                    worldToRender.XDim, worldToRender.YDim + 2);
+                //cenário contém um tamanho fixo
+                Console.SetWindowSize(87, 45);
             }
         }
 
         // Método que faz a renderização
-        public void Render(IBuffer2D<IEntity> worldToRender)
+        public void Render(Scenario worldToRender)
         {
-            // Usamos uma instância de StringBuilder para criar uma string de
-            // forma eficiente, indicando o tamanho final dessa string
-            StringBuilder sb = new StringBuilder(
-                worldToRender.XDim * worldToRender.YDim
-                +
-                Environment.NewLine.Length * worldToRender.YDim);
-            
-
             // Posicionar cursor no início
-            Console.SetCursorPosition(0, 2);
-            
+            Console.SetCursorPosition(0,0);
+            Draw_Hud();
         }
+
+      
+
+        public void Draw_Hud()
+        {
+            Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+            Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+            Console.SetCursorPosition(2, 2);
+            Console.Write("Score:" );
+
+            Console.SetCursorPosition(2, 68);
+            Console.Write("Lives: ");
+
+            Console.SetCursorPosition(0, 29);
+            Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+            Console.SetCursorPosition(0, 30);
+            Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+        }
+
+
     }
 }
