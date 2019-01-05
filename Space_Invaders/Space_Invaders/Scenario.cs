@@ -11,8 +11,8 @@ namespace Space_Invaders
         //classe responsável pelo cenário do jogo
         internal int score;
         internal int lives;
-
-        public IEntity[,] entities;
+        internal Slot[,] GameWorld = new Slot[28, 87];
+        public IEntity[] entities;
 
         public void Update()
         {

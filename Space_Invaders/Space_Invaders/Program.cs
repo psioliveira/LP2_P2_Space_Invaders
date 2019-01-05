@@ -12,16 +12,8 @@ namespace Space_Invaders
         //classe principal do jogo
         static void Main(string[] args)
         {
-          
-                Console.SetWindowSize(87, 45);
-           
-           /* 
-            * string[] lines = File.ReadAllLines(@"C:\Users\pedro\source\repos\LP2_P2_Space_Invaders\LP2_P2_Space_Invaders\space.txt");
-            foreach(string s in lines)
-            {
-                Console.WriteLine(s);
-            }
-            */
+
+
             Console.ReadKey();
         }
     }
