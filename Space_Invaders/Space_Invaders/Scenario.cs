@@ -12,47 +12,76 @@ namespace Space_Invaders
         internal int score;
         internal int lives;
         internal Slot[,] GameWorld = new Slot[28, 87];
-        public IEntity[] entities;
+        public IEntity[] entities = new IEntity[174];
 
         public void Update()
         {
-        }
 
+        }
 
         public void StartScenario()
         {
             score = 0;
             lives = 3;
-            for (int i = 0; i < entities.GetLength(1); i++)
-            {
-
-                for (int j = 0; j < entities.GetLength(2); j++)
-                {
-                    if (entities[i, j] is Enemy)
-                    {
-                        GetEnemie((entities[i, j] as Enemy).GetShip());
-
-                    }
-                }
-            }
+            GenerateEntities();
         }
 
 
-        
 
-        private void GetEnemie(string visual)
+
+        private void GenerateEntities()
         {
-            for (int i = 0; i < enemies.GetLength(1); i++)
+            int enemies = 0;
+            int neutrals = 0;
+            bool player = false;
+            for (uint i = 0; i < entities.Length; i++)
             {
-                for (int j = 0; j < enemies.GetLength(2); j++)
+                if (i == 0 && !player)
                 {
-                    if (enemies[i, j].Length <= 0)
+                    player = true;
+                    entities[i] = new Player();
+                    continue;
+                }
+
+
+                if (enemies < 60)
+                {
+                    if (enemies == 0) //cria o ovni
                     {
-                        enemies[i, j] = visual;
+                        entities[i] = new Enemy(4, i);
+                        enemies++;
+                        continue;
+                    }
+                    if (enemies>0 && enemies < 12) // cria os inimigos tier 3 
+                    {
+                        entities[i] = new Enemy(3, i);
+                        enemies++;
+                        continue;
                     }
 
+                    if (enemies > 11 && enemies < 36) // cria os inimigos tier 2
+                    {
+                        entities[i] = new Enemy(2, i);
+                        enemies++;
+                        continue;
+                    }
+
+                    if (enemies > 35 && enemies < 60) // cria os inimigos tier 1
+                    {
+                        entities[i] = new Enemy(1, i);
+                        enemies++;
+                        continue;
+                    }
                 }
+
+                if (neutrals < 112) //cria os blocos dos esudos
+                {
+                    entities[i] = new Neutral(i);
+                }
+
+
             }
         }
     }
 }
+
