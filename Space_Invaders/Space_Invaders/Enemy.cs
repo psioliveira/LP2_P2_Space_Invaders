@@ -1,28 +1,50 @@
 
 namespace Space_Invaders
 {
-    public class Enemy: IEntity
+    public class Enemy : IEntity
     {
         //classe que implementa os inimigos do jogo
         public uint tier;
+
+        public uint ID { get; set; }
         public uint SlotNumber { get; set; }
-        public uint SCoorX     { get; set; }
-        public uint SCoory     { get; set; }
-        
+        public uint SCoorX { get; set; }
+        public uint SCoory { get; set; }
+        public string Visual { get; set; }
+
         private uint killPoints = 0;
         private readonly float speed;
-        
+
 
         // Construtor
-        public Enemy(uint tier)
+        public Enemy(uint tier, uint id)
         {
             this.tier = tier;
+            ID = id;
         }
+        
 
         public void Shoot() { }
-
-        public void Die() { }
         
+
+        public void MoveLeft()
+        {
+            if (SCoorX > 0) { SCoorX--; }
+
+        }
+        public void MoveRight()
+        {
+            if (SCoorX > 0) { SCoorX--;  }
+        }
+
+        public void MoveDown()
+        {
+            if (SCoory < 28) { SCoory++; }
+
+        }
+
+        
+
 
         //métoo para selecionar cada inimigo pelo seu nível
         private void SelectByTier(int tier)
@@ -46,7 +68,7 @@ namespace Space_Invaders
 
                 case 4://ovni, muito mais pontos(difíceis de acertar,poucas chances de aparecer)
 
-                    SlotNumber = 1;  
+                    SlotNumber = 1;
                     killPoints = 100;
                     break;
 
@@ -54,5 +76,8 @@ namespace Space_Invaders
                     break;
             }
         }
+
+
+
     }
 }
