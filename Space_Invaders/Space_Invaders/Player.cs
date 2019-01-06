@@ -9,12 +9,18 @@ namespace Space_Invaders
 {
     class Player : IEntity
     { //clase que implementa o character para o jogador
+
         private int Pos;
         private uint lives = 3;
         private string visual = "dTb";
 
+        public Player() { }
 
-        public bool Alive { get; set; }
+        public uint ID { get; set; }
+        public uint SlotNumber { get; set; }
+        public uint SCoorX { get; set; }
+        public uint SCoory { get; set; }
+        public string Visual { get; set; }
 
         public void Shoot() { }
 
