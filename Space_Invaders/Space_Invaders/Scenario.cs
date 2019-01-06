@@ -30,9 +30,9 @@ namespace Space_Invaders
 
         private void GenerateEntities()
         {
-            int enemies = 0;
-            int neutrals = 0;
-            bool player = false;
+            int enemies = 0; //1-59(1 = ovni)
+            int neutrals = 0; //id 60-111
+            bool player = false; //id 0
             for (uint i = 0; i < entities.Length; i++)
             {
                 if (i == 0 && !player)
@@ -52,21 +52,21 @@ namespace Space_Invaders
                         continue;
                     }
                     if (enemies > 0 && enemies < 12) // cria os inimigos tier 3 
-                    {
+                    {//id do 2 ao 13
                         entities[i] = new Enemy(3, i);
                         enemies++;
                         continue;
                     }
 
                     if (enemies > 11 && enemies < 36) // cria os inimigos tier 2
-                    {
+                    { // id 14 ao 38 
                         entities[i] = new Enemy(2, i);
                         enemies++;
                         continue;
                     }
 
-                    if (enemies > 35 && enemies < 60) // cria os inimigos tier 1
-                    {
+                    if (enemies > 37 && enemies < 60) // cria os inimigos tier 1
+                    { //id 39 ao 63
                         entities[i] = new Enemy(1, i);
                         enemies++;
                         continue;
@@ -88,14 +88,18 @@ namespace Space_Invaders
             {
                 if (e.ID == 0)
                 {
-                    
+                    SetVisual(e);
                 }
+
+                if (e.ID)
+
+
             }
         }
 
-        private void SetVisual( IEntity entity)
+        private void SetVisual(IEntity entity)
         {
-            for(int i = 0; i < entity.SlotNumber; i++)
+            for (int i = 0; i < entity.SlotNumber; i++)
             {
                 gameWorld[entity.SCoorY, entity.SCoorX + i].owner = entity;
             }

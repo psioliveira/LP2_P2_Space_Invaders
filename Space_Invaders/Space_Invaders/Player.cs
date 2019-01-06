@@ -12,14 +12,19 @@ namespace Space_Invaders
 
         private int Pos;
         private uint lives = 3;
-
-        public Player() { }
-
         public uint ID { get; set; }
         public uint SlotNumber { get; set; }
         public uint SCoorX { get; set; }
         public uint SCoorY { get; set; }
         public char[] Visual { get; set; } = { 'd', 'T', 'b' };
+
+        public Player()
+        {
+            SCoorY = 26;
+            SCoorX = 0;
+        }
+
+        
 
         public void Shoot() { }
 
