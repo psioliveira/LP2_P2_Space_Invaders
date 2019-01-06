@@ -32,18 +32,18 @@ namespace Space_Invaders
         public void Render(Scenario worldToRender)
         {
             // Posicionar cursor no início
-            Console.SetCursorPosition(0,0);
+            Console.SetCursorPosition(0, 0);
             Draw_Hud();
         }
 
-      
+
 
         public void Draw_Hud()
         {
             Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
             Console.WriteLine("00000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
             Console.SetCursorPosition(2, 2);
-            Console.Write("Score:" );
+            Console.Write("Score:");
 
             Console.SetCursorPosition(2, 68);
             Console.Write("Lives: ");
