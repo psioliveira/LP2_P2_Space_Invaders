@@ -12,16 +12,16 @@ namespace Space_Invaders
         public uint SlotNumber { get; set; }
         public uint SCoorX { get; set; }
         public uint SCoorY { get; set; }
-        public string Visual { get; set; }
+        public char[] Visual { get; set; }
 
 
         public Neutral(uint id)
         {
-            Visual = "0";
+            Visual[0] = '0';
             ID = id;
         }
 
 
-        
+
     }
 }

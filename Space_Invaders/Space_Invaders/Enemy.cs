@@ -38,7 +38,7 @@ namespace Space_Invaders
 
         public void MoveDown()
         {
-            if (SCoorY < 28) { SCoorY++; }
+            if (SCoorY < 25) { SCoorY++; }
 
         }
 

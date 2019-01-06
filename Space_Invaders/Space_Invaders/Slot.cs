@@ -9,11 +9,13 @@ namespace Space_Invaders
     class Slot
     {
 
-        internal char c = '.';
+        internal char c = ' ';
         internal IEntity owner;
         internal void Update()
         {
-            c = owner.Visual;
+            if (owner != null) { c = owner.Visual[owner.SCoorX]; }
+            else { c = ' '; }
+
         }
         public Slot() { }
 

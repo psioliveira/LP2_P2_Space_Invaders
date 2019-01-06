@@ -11,6 +11,6 @@ namespace Space_Invaders
         uint SCoorY { get; set; }
 
         //characteres for the slots
-        char Visual { get; set; }
+        char[] Visual { get; set; }
     }
 }
