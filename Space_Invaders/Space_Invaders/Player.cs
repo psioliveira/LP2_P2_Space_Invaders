@@ -9,9 +9,9 @@ namespace Space_Invaders
 {
     class Player : IEntity
     { //clase que implementa o character para o jogador
-
-        private int Pos;
-        private uint lives = 3;
+        
+        
+        internal uint lives = 3;
         public uint ID { get; set; }
         public uint SlotNumber { get; set; }
         public uint SCoorX { get; set; }
@@ -34,11 +34,11 @@ namespace Space_Invaders
         }
         public void MoveLeft()
         {
-            if (Pos > 0) { Pos--; }
+            if (SCoorX > 0) { SCoorX--; }
         }
         public void MoveRight()
         {
-            if (Pos < 83) { Pos++; }
+            if (SCoorX < 83) { SCoorX++; }
         }
     }
 }

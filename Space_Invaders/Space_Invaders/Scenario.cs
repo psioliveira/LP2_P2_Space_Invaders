@@ -9,7 +9,7 @@ namespace Space_Invaders
     class Scenario
     {
         //classe responsável pelo cenário do jogo
-        internal int score;
+        internal uint score;
         internal int lives;
         internal Slot[,] gameWorld = new Slot[26, 87];
         public IEntity[] entities = new IEntity[174];
@@ -21,10 +21,10 @@ namespace Space_Invaders
 
         public void StartScenario()
         {
-            score = 0;
-            lives = 3;
+            
             GenerateEntities();
             PlaceEntities();
+            score = (entities[0] as Player).lives;
         }
 
 
