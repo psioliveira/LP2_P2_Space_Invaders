@@ -11,7 +11,7 @@ namespace Space_Invaders
         //classe responsável pelo cenário do jogo
         internal int score;
         internal int lives;
-        internal Slot[,] GameWorld = new Slot[28, 87];
+        internal Slot[,] gameWorld = new Slot[28, 87];
         public IEntity[] entities = new IEntity[174];
 
         public void Update()
@@ -24,9 +24,8 @@ namespace Space_Invaders
             score = 0;
             lives = 3;
             GenerateEntities();
+            PlaceEntities();
         }
-
-
 
 
         private void GenerateEntities()
@@ -52,7 +51,7 @@ namespace Space_Invaders
                         enemies++;
                         continue;
                     }
-                    if (enemies>0 && enemies < 12) // cria os inimigos tier 3 
+                    if (enemies > 0 && enemies < 12) // cria os inimigos tier 3 
                     {
                         entities[i] = new Enemy(3, i);
                         enemies++;
@@ -80,6 +79,25 @@ namespace Space_Invaders
                 }
 
 
+            }
+        }
+
+        private void PlaceEntities()
+        {
+            foreach (IEntity e in entities)
+            {
+                if (e.ID == 0)
+                {
+                    
+                }
+            }
+        }
+
+        private void SetVisual( IEntity entity)
+        {
+            for(int i = 0; i < entity.SlotNumber; i++)
+            {
+                gameWorld[entity.SCoorY, entity.SCoorX + i].owner = entity;
             }
         }
     }

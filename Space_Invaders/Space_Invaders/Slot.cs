@@ -10,9 +10,14 @@ namespace Space_Invaders
     {
 
         internal char c = '.';
-        internal IEntity isPartOf = null;
-
+        internal IEntity owner;
+        internal void Update()
+        {
+            c = owner.Visual;
+        }
         public Slot() { }
+
+
 
     }
 }

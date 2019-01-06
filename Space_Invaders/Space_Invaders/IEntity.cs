@@ -8,9 +8,9 @@ namespace Space_Invaders
         uint SlotNumber { get; set; }
         //first slot coordinates
         uint SCoorX { get; set; }
-        uint SCoory { get; set; }
+        uint SCoorY { get; set; }
 
         //characteres for the slots
-        string Visual { get; set; }
+        char Visual { get; set; }
     }
 }

@@ -12,15 +12,14 @@ namespace Space_Invaders
 
         private int Pos;
         private uint lives = 3;
-        private string visual = "dTb";
 
         public Player() { }
 
         public uint ID { get; set; }
         public uint SlotNumber { get; set; }
         public uint SCoorX { get; set; }
-        public uint SCoory { get; set; }
-        public string Visual { get; set; }
+        public uint SCoorY { get; set; }
+        public char[] Visual { get; set; } = { 'd', 'T', 'b' };
 
         public void Shoot() { }
 

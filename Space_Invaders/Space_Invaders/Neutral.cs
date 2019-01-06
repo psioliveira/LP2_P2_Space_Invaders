@@ -11,7 +11,7 @@ namespace Space_Invaders
         public uint ID { get; set; }
         public uint SlotNumber { get; set; }
         public uint SCoorX { get; set; }
-        public uint SCoory { get; set; }
+        public uint SCoorY { get; set; }
         public string Visual { get; set; }
 
 
