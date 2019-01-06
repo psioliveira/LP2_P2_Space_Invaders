@@ -14,7 +14,7 @@ namespace Space_Invaders
         internal Slot[,] gameWorld = new Slot[26, 87];
         public IEntity[] entities = new IEntity[174];
 
-        public void Update()
+        public void UpdateScenario()
         {
 
         }
@@ -196,7 +196,8 @@ namespace Space_Invaders
             {
                 position[0] = lastPos[0];
 
-                if (lastPos[1] == 6 || lastPos[1] == 30 || lastPos[1] == 52 || lastPos[1] == 76)
+                if (lastPos[1] == 6 || lastPos[1] == 30 ||
+                    lastPos[1] == 52 || lastPos[1] == 76)
                 { position[1] = lastPos[1] + 3; }
 
                 if (lastPos[1] == 11 || lastPos[1] == 35 || lastPos[1] == 57)
@@ -213,7 +214,8 @@ namespace Space_Invaders
             {
                 position[0] = lastPos[0];
 
-                if (lastPos[1] == 5 || lastPos[1] == 29 || lastPos[1] == 51 || lastPos[1] == 75)
+                if (lastPos[1] == 5 || lastPos[1] == 29 ||
+                    lastPos[1] == 51 || lastPos[1] == 75)
                 { position[1] = lastPos[1] + 5; }
 
                 if (lastPos[1] == 11 || lastPos[1] == 35 || lastPos[1] == 57)

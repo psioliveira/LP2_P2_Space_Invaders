@@ -25,6 +25,9 @@ namespace Space_Invaders
         private long MS_PER_FRAME = 17;
 
 
+        private Scenario scenario = new Scenario();
+
+
         /// <summary>Inicio do Programa</summary>
         static void Main()
         {
@@ -48,12 +51,12 @@ namespace Space_Invaders
             // Declarar e instanciar thread produtora (coloca teclas na
             // coleção) e thread consumidora (retira teclas da coleção)
             Thread prodThread = new Thread(PlayerInput);
-
             // Iniciar thread
             prodThread.Start();
-
             // Esperar que as threads terminem
             prodThread.Join();
+
+            GameLoop();
         }
 
 
@@ -102,16 +105,16 @@ namespace Space_Invaders
 
                 if (key == ConsoleKey.W || key == ConsoleKey.UpArrow || key == ConsoleKey.Spacebar)
                 {
-                    Console.WriteLine("Tiro");
+                    
                 }
 
                 else if (key == ConsoleKey.D || key == ConsoleKey.RightArrow)
                 {
-                    Console.WriteLine("Direita");
+                    
                 }
                 else if (key == ConsoleKey.A || key == ConsoleKey.LeftArrow)
                 {
-                    Console.WriteLine("Esquerda");
+                    
                 }
 
             }
