@@ -1,24 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Space_Invaders
 {
+    /// <summary>
+    /// classe responsavel por gerar uma instância do cenáriodo jogo
+    /// </summary>
     class Scenario
     {
-        //classe responsável pelo cenário do jogo
+        /// <summary>
+        /// score do jogador atual
+        /// </summary>
         internal uint score;
+        /// <summary>
+        /// vidas do jogador atual
+        /// </summary>
         internal uint lives;
+        /// <summary>
+        /// slots para os caracteres a serem apresentados no renderizador.
+        /// </summary>
         internal Slot[,] gameWorld = new Slot[26, 87];
+        /// <summary>
+        /// Todas os objectos IEntity que existem no início do jogo.
+        /// incluindo inimigos, jogador, barricadas, e projéteis(quando disparados).
+        /// </summary>
         public IEntity[] entities = new IEntity[174];
 
-        public void UpdateScenario()
-        {
-            
-        }
+        /// <summary>
+        /// método update para atualizar variáveis e posição dos objectos no mundo.
+        /// </summary>
+        public void UpdateScenario()  { }
 
+        /// <summary>
+        /// Inicializa os objectos e os adiciona nas devidas posições iniciais. 
+        /// </summary>
         public void StartScenario()
         {
             GenerateEntities();
@@ -26,7 +40,9 @@ namespace Space_Invaders
             lives = (entities[0] as Player).lives;
         }
 
-
+        /// <summary>
+        /// Gera os objectos IEntity e os define pelo ID.
+        /// </summary>
         private void GenerateEntities()
         {
             int enemies = 0; //1-59(1 = ovni)
@@ -81,6 +97,9 @@ namespace Space_Invaders
             }
         }
 
+        /// <summary>
+        /// Posicionar  os objectos no mundo de acordo com seu ID. 
+        /// </summary>
         private void PlaceEntities()
         {
             int c = 0;
@@ -149,6 +168,9 @@ namespace Space_Invaders
             }
         }
 
+        /// <summary>
+        /// define o visual dos objectos.
+        /// </summary>
         private void SetVisual(IEntity entity)
         {
             for (int i = 0; i < entity.SlotNumber; i++)
@@ -157,6 +179,9 @@ namespace Space_Invaders
             }
         }
 
+        /// <summary>
+        /// Adiciona as barreiras nos seus respetivos lugares. 
+        /// </summary>
         private int[] BuildBarrier(IEntity e, int[] lastPos)
         {
             int[] position = new int[] { 0, 0 };
@@ -231,6 +256,9 @@ namespace Space_Invaders
             return position;
         }
 
+        /// <summary>
+        /// IA basica para movimentação dos inimigos.
+        /// </summary>
         private void MovementEnemies()
         {
             foreach(IEntity e in entities)

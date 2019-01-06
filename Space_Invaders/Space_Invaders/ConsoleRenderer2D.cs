@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Text;
 using System.Runtime.InteropServices;
 
 namespace Space_Invaders
 {
+    /// <summary>
+    /// calsse para controlar a renderização e o tamanho da tela. 
+    /// </summary>
     class ConsoleRenderer2D
     {
         // Construtor
@@ -11,33 +13,50 @@ namespace Space_Invaders
         {
         }
 
-        // Faz o setup inicial
+        /// <summary>
+        /// metodos para o setup inicial da tela
+        /// </summary>
         public void Setup(Scenario worldToRender)
         {
-            // Limpar a consola
+            /// <summary>
+            /// limpa a consola
+            /// </summary>
             Console.Clear();
 
-            // Esconder o cursor
+            /// <summary>
+            /// esconde o cursor
+            /// </summary>
             Console.CursorVisible = false;
 
-            // Se estivermos em Windows adicionar o terminal com o tamanho do mundo de simulação
+            /// <summary>
+            /// Se estivermos em Windows adicionar o 
+            /// terminal com o tamanho do mundo de simulação.
+            /// </summary>
+
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                //cenário contém um tamanho fixo
+                /// <summary>
+                /// cenario de tamanho fixo,
+                /// </summary>
                 Console.SetWindowSize(87, 45);
             }
         }
 
-        // Método que faz a renderização
+        /// <summary>
+        /// Metodo que realiza a renderização. 
+        /// </summary>
         public void Render(Scenario worldToRender)
-        {
-            // Posicionar cursor no início
+        { /// <summary>
+          /// Posicionar cursor no início. 
+          /// </summary>
             Console.SetCursorPosition(0, 0);
             Draw_Hud();
         }
 
 
-
+        /// <summary>
+        /// desenha o Hud.
+        /// </summary>
         public void Draw_Hud()
         {
             Console.WriteLine("000000000000000000000000000000000000000000" +

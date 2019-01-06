@@ -1,12 +1,19 @@
 ﻿
 namespace Space_Invaders
 {
+    /// <summary>
+    /// interface responsável pela renderização 
+    /// </summary>
     interface IRenderer2D
     {
-        // Método que faz o setup inicial antes da renderização começar
+        /// <summary>
+     /// metodos para o setup inicial 
+     /// </summary>
         void Setup(Slot worldToRender);
 
-        // Método que realiza a renderização
+        /// <summary>
+        /// metodos de renderização
+        /// </summary>
         void Render(Slot worldToRender);
     }
 }

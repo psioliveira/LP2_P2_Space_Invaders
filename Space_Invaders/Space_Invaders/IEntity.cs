@@ -1,6 +1,10 @@
 ﻿
 namespace Space_Invaders
 {
+    /// <summary>
+    /// ~Interface para as entidades do jogo, como player,
+    /// inimigos, entre outros.
+    /// </summary>
     public interface IEntity
     {
         //number of slots in world space

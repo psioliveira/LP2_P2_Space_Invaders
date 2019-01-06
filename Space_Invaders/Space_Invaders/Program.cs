@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.Collections.Concurrent;
 using System.Threading;
 
 namespace Space_Invaders
 {
+    /// <summary>
+    /// Classe program, no qual o programa corre.
+    /// </summary>
     internal class Program
     {
 
@@ -24,7 +22,9 @@ namespace Space_Invaders
         /// </summary>
         private long MS_PER_FRAME = 17;
 
-
+        /// <summary>
+        /// Inicialia um objecto do tipo Scenario. 
+        /// </summary>
         private Scenario scenario = new Scenario();
 
 
@@ -39,27 +39,29 @@ namespace Space_Invaders
 
         public Program()
         {
-            //  Instanciar a coleção thread-safe; por omissão esta coleção
-            // utiliza uma fila, mas isto pode ser alterado invocando outro
-            // overload do construtor
+            /// <summary>
+            ///  Instanciar a coleção thread-safe; por omissão esta coleção
+            /// utiliza uma fila, mas isto pode ser alterado invocando outro
+            /// overload do construtor
+            /// </summary>
             queue = new BlockingCollection<ConsoleKey>();
         }
 
         /// <summary>Inicia o programa propriamente dito.</summary>
         private void Start()
         {
-            // Declarar e instanciar thread produtora (coloca teclas na
-            // coleção) e thread consumidora (retira teclas da coleção)
+            /// <summary> Declarar e instanciar thread produtora 
+            /// (coloca teclas na coleção)</summary>
             Thread prodThread = new Thread(PlayerInput);
-            // Iniciar thread
+            /// <summary> Iniciar thread </summary>
             prodThread.Start();
-            // Esperar que as threads terminem
+            /// <summary> Esperar que as threads terminem </summary>
             prodThread.Join();
-
+            /// <summary>chama o metodo GameLoop </summary>
             GameLoop();
         }
 
-
+        /// <summary> metodo que realiza o gameloop </summary>
         void GameLoop()
         {
             while (true)
@@ -93,7 +95,7 @@ namespace Space_Invaders
         }
 
 
-
+        /// <summary>Metodo que coleta o input do jogador </summary>
         private void ColectInput()
         {
             // Variável para as teclas retiradas da coleção
@@ -120,13 +122,13 @@ namespace Space_Invaders
             }
         }
 
-
+        /// <summary> metodo update </summary>
         private void Update()
         {
 
         }
 
-
+        /// <summary> metodo renderer </summary>
         public void Render() { }
 
     }
