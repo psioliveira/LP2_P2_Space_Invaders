@@ -10,21 +10,20 @@ namespace Space_Invaders
     {
         //classe responsável pelo cenário do jogo
         internal uint score;
-        internal int lives;
+        internal uint lives;
         internal Slot[,] gameWorld = new Slot[26, 87];
         public IEntity[] entities = new IEntity[174];
 
         public void UpdateScenario()
         {
-
+            
         }
 
         public void StartScenario()
         {
-            
             GenerateEntities();
             PlaceEntities();
-            score = (entities[0] as Player).lives;
+            lives = (entities[0] as Player).lives;
         }
 
 
@@ -230,6 +229,23 @@ namespace Space_Invaders
 
 
             return position;
+        }
+
+        private void MovementEnemies()
+        {
+            foreach(IEntity e in entities)
+            {
+                if(e is Enemy)
+                {
+                    
+                    if(!(e as Enemy).LeftMove)
+                    {
+
+                        (e as Enemy).MoveRight();
+
+                    }
+                }
+            }
         }
 
 

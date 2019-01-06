@@ -13,7 +13,7 @@ namespace Space_Invaders
         public char[] Visual { get; set; } = { ' ', ' ', ' ' };
         private uint killPoints = 0;
         private readonly float speed;
-
+        internal bool LeftMove = false;
 
         // Construtor
         public Enemy(uint tier, uint id)
@@ -42,9 +42,7 @@ namespace Space_Invaders
 
         }
 
-        
-
-
+    
         //métoo para selecionar cada inimigo pelo seu nível
         private void SelectByTier(int tier)
         {
